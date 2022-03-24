@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +23,7 @@
     <!--Navbar for student-->
     <?php include 'stdudent-nav.php'; ?>
 
-    <h3>Welcome</h3>
+    <h3>Welcome <?php echo $_SESSION['uname'];?></h3>
 
 
 
