@@ -39,11 +39,11 @@ if (empty($errFlag) && $isPost == true) {
         $q = "select * from users where email='" . $umail . "' and password='" . $upass . "'";
         $result = $conn->query($q);
         if ($result->num_rows > 0) {
-            echo "Successful login";
-            // while ($row = $result->fetch_assoc()) {
-            //     // $_SESSION["loggedinuser"] = $row["Name"];
+            session_start();
+            while ($row = $result->fetch_assoc()) {
+            $_SESSION['uname']=$row['name'];
             header("location:../view/student/student-dashboard.php");
-            // }
+            }
         } else {
 
             $loginErr="** Email or password is incorrect";
