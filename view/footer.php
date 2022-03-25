@@ -1,4 +1,5 @@
 <footer>
+    <!-- Footer container -->
     <div class="footer-container">
         <div class="footer-left">
             <h3>E-Learning</h3>
@@ -9,6 +10,7 @@
                 <li><a href="#">Oneline Degrees</a></li>
             </ul>
         </div>
+        <!-- App download -->
         <div class="footer-right">
             <h3>Download our app for all platform</h3>
             <div class="app-store">
@@ -17,7 +19,9 @@
             </div>
         </div>
     </div>
+    <!-- Copyright section -->
     <div class="copyright">
         <p>Copyright &copy; 2022 e-learning software department</p>
     </div>
 </footer>
+<!-- End of footer -->

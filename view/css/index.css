@@ -1,13 +1,17 @@
+/* This will reset all the default styling fo the html elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Using the google font all over the page */
 body {
   font-family: "Poppins", sans-serif;
   font-family: "Roboto", sans-serif;
 }
 
+/* Banner section */
 .banner {
   background-image: url(../images/banner.jpg);
   background-size: cover;

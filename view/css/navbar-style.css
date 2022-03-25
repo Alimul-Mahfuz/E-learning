@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-
+/* Navbar secion */
 .navbar {
   display: flex;
   flex-direction: row;

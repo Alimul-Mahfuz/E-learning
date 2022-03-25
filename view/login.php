@@ -1,5 +1,8 @@
 <?php
+/*This is form is submitted to self and validated form login-control.php in controller folder*/
+
 include '../controller/login-control.php';
+
 ?>
 
 <!DOCTYPE html>
