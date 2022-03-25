@@ -118,7 +118,11 @@ if ($isPost == true && empty($errFlag)) {
             $insq = "INSERT INTO users (name,email,password,u_role,phone) VALUES ('" . $uname . "','" . $email . "','" . $upass . "','" . $uroll . "','" . $phone . "')";
             $result = $conn->query($insq);
             if ($result) {
-                header("location: ../view/student/student-dashboard.php");
+                session_start();
+                $_SESSION['uname']=$uname;
+                $_SESSION['uphone']=$phone;
+                $_SESSION['umail']=$email;
+                header("location: ../view/student/student-dashboard.php?successfull");
             } else
                 echo "Unknown error occured, Please try again later";
         }

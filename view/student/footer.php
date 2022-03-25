@@ -14,8 +14,8 @@
         <div class="footer-right">
             <h3>Download our app for all platform</h3>
             <div class="app-store">
-                <img src="../view/images/playstore.png" alt="google play store">
-                <img src="../view/images/ios.png" alt="apple store">
+                <img src="../images/playstore.png" alt="google play store">
+                <img src="../images/ios.png" alt="apple store">
             </div>
         </div>
     </div>

@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 100px 0px;
+    margin: 0px 15px 0px 15px;
+
+}
+.flex-container table{
+    /* margin-top: 150px; */
+    
+}
+.profile-datails{
+    margin-left: 10px;
+    padding: 50px 25px 50px 25px;
+    width: 100%;
+}
+.flex-container h2,h3,h4{
+    padding: 5px 0px 5px 0px;
+}
+.btn-container button{
+    margin-top: 50px;
+    padding: 12px 10px;
+    background-color: blueviolet;
+    border: none;
+    
+}
+
+.btn-container button a{
+    color: white;
+    text-decoration: none;
+}
+.profile-image{
+    text-align: center;
+    padding: 50px 25px 50px 25px;
+}

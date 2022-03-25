@@ -51,6 +51,9 @@ if (empty($errFlag) && $isPost == true) {
             while ($row = $result->fetch_assoc()) {
                 $_SESSION['uname'] = $row['name'];
                 $_SESSION['umail'] = $row['email'];
+                $_SESSION['uphone']=$row['phone'];
+                $_SESSION['uid']=$row['user_id'];
+                $_SESSION['profileimgpath']=$row['profileImage'];
 
                 //This will redirected the user to student's dashboard
                 header("location:../view/student/student-dashboard.php");
