@@ -1,10 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "e-learningdb";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+require '../../model/db-connect.php';
 
 
 if ($conn->connect_error) {
@@ -24,27 +19,40 @@ if ($conn->connect_error) {
         }
     }
     $id = $_SESSION['uid'];
-    $qc = "select c_id from payment where user_id='".$id."'";
+    $qc = "select c_id from payment where user_id='" . $id . "'";
     $courseArray = [];
 
     $res = $conn->query($qc);
     // print_r($res);
+    /*Printing the ccourse form payment, course table using user table*/
     if ($res->num_rows > 0) {
-        while($rw = $res->fetch_assoc()){
-            $qd = "select c_name from courses where c_id='" . $rw['c_id']. "'";
+        while ($rw = $res->fetch_assoc()) {
+            $cid = $rw['c_id'];
+            $qd = "select c_name,user_id from courses where c_id='" . $rw['c_id'] . "'";
             $rs = $conn->query($qd);
-            if ($rs->num_rows > 0){
-                while($ro = $rs->fetch_assoc()){
-                    array_push($courseArray,$ro['c_name']);
+            if ($rs->num_rows > 0) {
+                while ($ro = $rs->fetch_assoc()) {
+                    echo '<tr>';
+                    $cname = $ro['c_name'];
+
+                    $qe = "select name from users where user_id='" . $ro['user_id'] . "'";
+                    $rt = $conn->query($qe);
+                    if ($rt->num_rows > 0) {
+                        while ($r = $rt->fetch_assoc()) {
+                            // array_push($instructorArray, $r['name']);
+                            $instname = $r['name'];
+                        }
+                    }
+?> <td style="background: linear-gradient(92.11deg, #487EB0 30.92%, rgba(<?php echo rand(10, 255); ?>, <?php echo rand(180, 255); ?>, 95, 0.536913) 80.37%, rgba(<?php echo rand(177, 255); ?>, 111, <?php echo rand(50, 255); ?>, 0) 124.93%);"><?php echo $cname; ?> <br> <span style="font-size: 12pt;font-weight: 300;"><?php echo 'Offered By: ' . $instname; ?></span>
+                        <button><a href="#">Drop</a></button>
+                    </td><?php
+                            echo '</tr>';
+                        }
+                    } else {
+                        "faild to retrive course name";
+                    }
                 }
+            } else {
+                echo "failded";
             }
-            else{
-                "faild to retrive course name";
-            }
-
-
         }
-    } else {
-        echo "failded";
-    }
-}
