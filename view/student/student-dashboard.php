@@ -1,6 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION)){
+    
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ if(isset($_SESSION)){
     <style>
         nav ul li button {
             padding: 10px;
-            background-color: red;
+            background-color: cadetblue;
             border: none;
             border-radius: 10px;
         }
@@ -37,6 +38,14 @@ if(isset($_SESSION)){
     </div>
     <!-- Enrolled Courses -->
     <h3 class="page-heading">Enrolled Course</h3>
+    <?php include '../../controller/printcourse.php'; ?>
+    <?php
+    foreach($courseArray as $course){
+        echo $course.'<br>';
+    }
+
+    ?>
+
 
 </body>
 

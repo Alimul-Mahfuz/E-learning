@@ -40,6 +40,7 @@ include '../controller/login-control.php';
                     <button type="submit" name="btn-login">Login</button>
                     <br>
                     <span class="errorstyle"><?php echo $loginErr; ?></span>
+                    <span class="errorstyle"><?php echo $accountypeErr; ?></span>
                     <p><a href="#">Forget password?</a></p>
                     <p>Don't join yet? <a href="singup.php">Sing up</a></p>
                 </form>
