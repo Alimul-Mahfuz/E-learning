@@ -13,9 +13,14 @@ if (isset($_SESSION)) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/navbar-style.css">
         <link rel="stylesheet" href="../css/std-dashboardstyle.css">
+        <link rel="stylesheet" href="../css/footerstyle.css">
         <title>Welcome to E-Learning</title>
         <!-- Internal css for modify the color of the logut button over loginstyle.css -->
         <style>
+            body {
+                background-image: url("../images/bg2.png");
+            }
+
             nav ul li button {
                 padding: 10px;
                 background-color: cadetblue;
@@ -53,7 +58,7 @@ if (isset($_SESSION)) {
                 font-weight: 400px;
             }
 
-            table td button a{
+            table td button a {
                 text-decoration: none;
                 color: white;
                 font-size: 12pt;
@@ -75,9 +80,10 @@ if (isset($_SESSION)) {
         <!-- Enrolled Courses -->
         <h3 class="page-heading">Enrolled Course</h3>
 
-        <table>
+        <table style="height:500px;">
             <?php include '../../controller/printcourse.php'; ?>
         </table>
+        <?php include'./footer.php';?>
 
 
 
