@@ -1,20 +1,23 @@
+/* Reset all the default margin and padding  */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body styling */
 body{
     
     background: linear-gradient(109.45deg, #4ACBD3 20.26%, rgba(145, 14, 206, 0) 96.64%);
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+/*From container height  */
 .regform-container{
     height: 630px;
 }
 
+/* Actual form design */
 .regform-container form{
     width: 1139px;
     margin: 5px auto;
@@ -24,14 +27,13 @@ body{
     border-radius: 13px;
 }
 
+/* Table insde the registration form which contain input filed */
 .regform-container form table{
     width: 300px;
     margin: 0 auto;
 }
-#lname{
-    margin-left: 10px;
-}
 
+/* Heading styling above the form input field */
 .reg-form h3{
     padding: 50px;
     text-align: center;
@@ -42,6 +44,7 @@ body{
     line-height: 30px;
 }
 
+/* All input and select box styling */
 .regform-container input, select{
     margin-top: 20px;
     font-size: 14pt;
@@ -51,6 +54,7 @@ body{
     border-radius: 5px;
 }
 
+/* Sing up button styling */
 #singupbtn{
     margin-top: 25px;
     font-size: 14pt;
@@ -61,6 +65,7 @@ body{
 
 
 }
+
 
 .regform-container p {
     margin-top: 10px;
@@ -75,4 +80,6 @@ body{
     line-height: 16px;
 
 }
+
+
 
