@@ -16,6 +16,10 @@ if (isset($_SESSION)) {
         <link rel="stylesheet" href="../css/footerstyle.css">
         <title>Profile</title>
         <style>
+            body {
+                background-image: url("../images/bg2.png");
+            }
+
             nav ul li button {
                 padding: 10px;
                 background-color: cadetblue;
@@ -72,7 +76,7 @@ if (isset($_SESSION)) {
                             <h4>:</h4>
                         </td>
                         <td>
-                            <h4>Address</h4>
+                            <p><?php echo $_SESSION['uaddress']; ?></p>
                         </td>
                     </tr>
                 </table>
@@ -80,7 +84,7 @@ if (isset($_SESSION)) {
                     <button><a href="#">Change Password</a></button>
                     <button><a href="#">Edit Details</a></button>
                     <button><a href="#">View Grade</a></button>
-                    <button style="background-color: red;" ><a href="#">Delete Account</a></button>
+                    <button style="background-color: red;"><a href="#">Delete Account</a></button>
                 </div>
             </div>
             <div class="profile-image">
