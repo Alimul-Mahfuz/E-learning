@@ -39,6 +39,7 @@ if ($conn->connect_error) {
     if ($res->num_rows > 0) {
         while ($rw = $res->fetch_assoc()) {
             $cid = $rw['c_id'];
+            array_push($courseArray,$cid);
             $qd = "select c_name,user_id from courses where c_id='" . $rw['c_id'] . "'";
             $rs = $conn->query($qd);
             if ($rs->num_rows > 0) {

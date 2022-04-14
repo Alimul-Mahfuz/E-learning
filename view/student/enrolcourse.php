@@ -3,7 +3,7 @@ include '../../controller/printInstructor.php';
 
 
 $insDet = printInstructorDetails($_GET['instructor_id']);
-echo $cid = $_GET['course_id'];
+$cid = $_GET['course_id'];
 
 ?>
 <!DOCTYPE html>
