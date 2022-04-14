@@ -10,9 +10,9 @@ $passErr = "";
 $umail = "";
 $upass = "";
 $isPost = false;
-$errFlag = [];//Array to contain any kind of error event
+$errFlag = []; //Array to contain any kind of error event
 $loginErr = "";
-$accountypeErr= "";
+$accountypeErr = "";
 
 /*input validation code*/
 if (isset($_POST['btn-login'])) {
@@ -30,7 +30,7 @@ if (empty($_POST["email"]) && $isPost == true) {
 }
 if (empty($_POST["password"]) && $isPost == true) {
     $passErr = "** Password is missing";
-    array_push($errFlag, $passwordErr);
+    array_push($errFlag, $passErr);
 }
 
 /*Database query execution code*/
@@ -52,14 +52,13 @@ if (empty($errFlag) && $isPost == true) {
             while ($row = $result->fetch_assoc()) {
                 $_SESSION['uname'] = $row['name'];
                 $_SESSION['umail'] = $row['email'];
-                $_SESSION['uphone']=$row['phone'];
-                $_SESSION['uid']=$row['user_id'];
-                $_SESSION['urole']=$row['u_role'];
-                $_SESSION['uaddress']=$row['address'];
-                $_SESSION['profileimgpath']=$row['profileImage'];
-
+                $_SESSION['uphone'] = $row['phone'];
+                $_SESSION['uid'] = $row['user_id'];
+                $_SESSION['urole'] = $row['u_role'];
+                $_SESSION['uaddress'] = $row['address'];
+                $_SESSION['profileimgpath'] = $row['profileImage'];
             }
-            if($_SESSION['urole']==2){
+            if ($_SESSION['urole'] == 2) {
                 //This will redirected the user to student's dashboard
                 header("location:../view/student/student-dashboard.php");
             }

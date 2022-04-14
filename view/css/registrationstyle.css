@@ -1,4 +1,5 @@
 /* Reset all the default margin and padding  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200;1,300&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -13,14 +14,17 @@ body{
     background-repeat: no-repeat;
 }
 /*From container height  */
-.regform-container{
-    height: 630px;
-}
+/* .regform-container{
+    height: auto;
+} */
 
 /* Actual form design */
+.registration-container{
+    margin-bottom: 100px;
+}
 .regform-container form{
-    width: 1139px;
-    margin: 5px auto;
+    width: 700px;
+    margin: 0 auto;
     background: #EFEFEF;
     border: 2px solid #00C2FF;
     box-shadow: 7px 9px 24px rgba(0, 0, 0, 0.25);
@@ -35,11 +39,11 @@ body{
 
 /* Heading styling above the form input field */
 .reg-form h3{
-    padding: 50px;
+    padding: 30px;
     text-align: center;
     color: black;
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     line-height: 30px;
 }
@@ -69,7 +73,7 @@ body{
 
 .regform-container p {
     margin-top: 10px;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 
 }
 
@@ -78,6 +82,7 @@ body{
     color: black;
     font-size: 14pt;
     line-height: 16px;
+    letter-spacing: 0.3rem;
 
 }
 

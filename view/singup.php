@@ -28,7 +28,7 @@ require '../controller/reg-control.php';
 <style>
     /* Error styling for */
     .errorstyle {
-        padding: 3px 0px;
+        padding: 1px 0px;
     }
 
     .regform-container {
@@ -141,7 +141,7 @@ require '../controller/reg-control.php';
 
                         </tr>
                         <tr>
-                            <td>
+                            <td colspan="2">
                                 <p>Already have a account? <a href="./login.php">Login</a></p>
                             </td>
                         </tr>

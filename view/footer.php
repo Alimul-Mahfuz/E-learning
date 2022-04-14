@@ -21,7 +21,7 @@
     </div>
     <!-- Copyright section -->
     <div class="copyright">
-        <p>Copyright &copy; 2022 e-learning software department</p>
+        <p>Copyright &copy; 2022 e-learning software department by Alimul Mahfuz Tushar</p>
     </div>
 </footer>
 <!-- End of footer -->

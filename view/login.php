@@ -15,12 +15,21 @@ include '../controller/login-control.php';
     <link rel="stylesheet" href="./css/loginstyle.css">
     <link rel="stylesheet" href="./css/navbar-style.css">
     <link rel="stylesheet" href="./css/footerstyle.css">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Login To E-Learning</title>
 </head>
 <style>
     .errorstyle {
         font-size: 10pt;
         color: red;
+    }
+
+    .logerr {
+        display: none;
+        color: red;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.3rem;
     }
 </style>
 
@@ -30,17 +39,20 @@ include '../controller/login-control.php';
         <div class="login-form">
             <h3>Login To E-learning</h3>
             <div class="form-container">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <input type="email" value="<?php echo $email; ?>" name="email" placeholder="Enter your mail" id="">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return loginValidate();">
+                    <input type="email" value="<?php echo $email; ?>" name="email" placeholder="Enter your mail" id="email">
+                    <span><small id="emailErr" class="logerr"><i class="fa-solid fa-circle-exclamation"></i> Enter a valid email</small></span>
+
+                    <input type="password" name="password" placeholder="Password" id="password">
+
+                    <span><small id="passErr" class="logerr"><i class="fa-solid fa-circle-exclamation"></i> Enter a valid password</small></span>
                     <br>
-                    <span class="errorstyle"><?php echo $emailErr; ?></span>
-                    <input type="password" name="password" placeholder="Password" id="">
-                    <br>
-                    <span class="errorstyle"><?php echo $passErr; ?></span>
+
                     <button type="submit" name="btn-login">Login</button>
                     <br>
-                    <span class="errorstyle"><?php echo $loginErr; ?></span>
-                    <span class="errorstyle"><?php echo $accountypeErr; ?></span>
+                    <span><small id="logPassErr" class="logerr"><i class="fa-solid fa-circle-exclamation"></i><?php echo $loginErr; ?></small></span>
+                    <!-- <span class="errorstyle"><?php echo $loginErr; ?></span>
+                    <span class="errorstyle"><?php echo $accountypeErr; ?></span> -->
                     <p><a href="#">Forget password?</a></p>
                     <p>Don't join yet? <a href="singup.php">Sing up</a></p>
                 </form>
@@ -48,6 +60,21 @@ include '../controller/login-control.php';
         </div>
     </div>
     <?php include 'footer.php'; ?>
+    <script>
+        var logEmailErr = "<?php echo $loginErr; ?>";
+        console.log(logEmailErr);
+        if (logEmailErr !== '') {
+            let err = document.getElementById("logPassErr");
+            err.style.display = 'block';
+            alart();
+            // logErrFlag=true;
+        }
+        if (logEmailErr == '') {
+            let err = document.getElementById("logPassErr");
+            err.style.display = 'none';
+        }
+    </script>
+    <script src="./scripts/loginvalid.js"></script>
 </body>
 
 </html>

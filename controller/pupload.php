@@ -1,4 +1,5 @@
 <?php
+//This will upload user profile picture
 session_start();
 include '../../model/db-connect.php';
 if (empty($_SESSION['uid'])) {
