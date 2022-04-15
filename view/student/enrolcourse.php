@@ -16,6 +16,7 @@ $cid = $_GET['course_id'];
     <link rel="stylesheet" href="../css/navbar-style.css">
     <link rel="stylesheet" href="../css/std-dashboardstyle.css">
     <link rel="stylesheet" href="../css/footerstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Enroll Course</title>
     <style>
         body {
@@ -94,7 +95,7 @@ $cid = $_GET['course_id'];
 
         </div>
     </div>
-    <div class="insdetails"><span><a href="#" onclick="showInstDetails">About Instructor</a></span><span><a href="">Course Despcription</a></span></div>
+    <div class="insdetails"><span><button>About Instructor</button></span><span><button>Course Despcription</button></span></div>
 </body>
 
 </html>

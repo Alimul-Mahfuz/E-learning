@@ -32,8 +32,6 @@ function printInstructorDetails($ins_id)
                         }
                         $insDetails['instname'] = $uniName;
                         $insDetails['degree'] = $degree;
-                    } else {
-                        echo "No Data found!";
                     }
                 }
             }

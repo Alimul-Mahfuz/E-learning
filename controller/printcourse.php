@@ -59,7 +59,7 @@ if ($conn->connect_error) {
 ?> 
 <!-- Styling to print the course -->
 <td style="background: linear-gradient(92.11deg, #487EB0 30.92%, rgba(<?php echo rand(10, 255); ?>, <?php echo rand(180, 255); ?>, 95, 0.536913) 80.37%, rgba(<?php echo rand(177, 255); ?>, 111, <?php echo rand(50, 255); ?>, 0) 124.93%);"><?php echo $cname; ?> <br> <span style="font-size: 12pt;font-weight: 300;"><?php echo 'Offered By: ' . $instname; ?></span>
-                        <button><a href="#">Drop</a></button>
+                        <button><a href="../../controller/dropCourse.php?c_id=<?php echo $cid;?>">Drop</a></button>
                     </td><?php
                             echo '</tr>';
                         }
