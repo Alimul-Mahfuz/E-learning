@@ -4,7 +4,6 @@ if (empty($_SESSION)) {
     header('location: ../login.php');
 }
 
-
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -65,37 +64,51 @@ if (empty($_SESSION)) {
                 color: white;
                 font-size: 12pt;
             }
-            .course-container{
-                position: relative;
-                top:60px;
-                min-height: 480px;
+            .mainarea{
+                height: 500px;
             }
+            .msg{
+                margin: 0 auto;
+            }
+            .msg h3{
+                text-align: center;
+                font-size: 2rem;
+                font-weight: 400;
+                color: red;
+                padding: 15px;
+            }
+
+            .msg p{
+                text-align: center;
+            }
+
         </style>
     </head>
 
     <body>
         <!--Navbar for student-->
         <?php include 'student-nav.php'; ?>
+        <div class="mainarea">
+            <div class="msg">
+            <?php
+        if(!empty($_GET['msg'])){
+            $msg = $_GET['msg'];
+            echo '<h3>'.$msg.'</h3>';
+            echo '<p>'."Redirection you to the dashboard in 2 second"."</p>";
+            header( "refresh:2;url=student-dashboard.php" );
 
-        <!-- Welcome banner -->
-        <div class="stdbanner-container">
-            <div class="inner-banner">
-                <h2>Weclome, <?php echo $_SESSION['uname']; ?></h2>
-                <h3>Learn to englighten your knowledge</h3>
+        }
+        
+        
+        ?>
             </div>
-        </div>
-        <!-- Enrolled Courses -->
-
-        <div class="course-container">
-        <h3 class="page-heading">Enrolled Course</h3>
-        <table>
-            <?php include '../../controller/printcourse.php'; ?>
-        </table>
-
-
+            
         </div>
 
+
+        
         <?php include'./footer.php';?>
+
 
 
     </body>

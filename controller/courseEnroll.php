@@ -1,15 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "e-learningdb";
-
-$conn = new mysqli(
-    $servername,
-    $username,
-    $password,
-    $dbname
-);
+//Controller courseEnroll use in enrolcourse.php to enroll new student to a course
+include '../model/db-connect.php';
 $csa = array();
 
 if ($conn->connect_errno) {
@@ -28,8 +19,10 @@ if ($conn->connect_errno) {
     $chkres = $conn->query($check);
     if($chkres->num_rows>0){
 
-        echo "You are already enrooled this course";
-        header( "refresh:2;url=../view/student/student-dashboard.php" );
+        header("location:../view/student/redirection.php?msg=You are already enrolled this course");
+
+        
+        
     }
     else{
         $dnow = date('y-m-d');

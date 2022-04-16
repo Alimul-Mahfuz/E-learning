@@ -1,9 +1,16 @@
 <?php
+session_start();
+if (empty($_SESSION)) {
+    header('location: ../login.php');
+}
 include '../../controller/printInstructor.php';
+
+
 
 
 $insDet = printInstructorDetails($_GET['instructor_id']);
 $cid = $_GET['course_id'];
+
 
 ?>
 <!DOCTYPE html>
@@ -57,10 +64,23 @@ $cid = $_GET['course_id'];
 
         }
 
-        .insdetails a {
+        .insdetails span button {
             text-decoration: none;
+            font-size: 12pt;
             color: black;
-            padding: 50px;
+            padding: 5px;
+            border: none;
+            /* border: 2.5px solid blueviolet; */
+            background-color: #bfbfbf;
+
+        }
+
+        .insdetails span button:hover {
+            font-weight: bold;
+        }
+
+        .insdetails span {
+            margin-left: 10px;
         }
 
 
@@ -73,6 +93,34 @@ $cid = $_GET['course_id'];
             border-radius: 5px;
             float: right;
             margin: 50px 50px;
+        }
+
+        .insdet {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px 100px;
+            min-height: 380px;
+        }
+
+        .insqual p {
+            font-size: 14pt;
+            font-weight: 400;
+            padding: 10px 0px;
+            line-height: 1.8rem;
+        }
+        .courseDes{
+            margin: 12px 100px;
+            text-align: justify;
+            min-height: 380px;
+            
+        }
+        .courseDes p{
+            font-size: 14pt;
+            line-height: 1.5rem;
+        }
+        .courseDes h3{
+            font-size: 18pt;
+            line-height: 3.5rem;
         }
     </style>
 </head>
@@ -95,7 +143,35 @@ $cid = $_GET['course_id'];
 
         </div>
     </div>
-    <div class="insdetails"><span><button>About Instructor</button></span><span><button>Course Despcription</button></span></div>
+    <div class="insdetails"><span><button id="insdet">About Instructor</button></span><span><button id="csdet">Course Despcription</button></span></div>
+
+    <div class="details-container">
+        <?php include 'instprofile.php';?>
+
+    </div>
+
+
+
+
+    </div>
+    <?php include 'footer.php';?>
 </body>
+<script>
+    var insid = "<?php echo $_GET['instructor_id']?>"
+    var cid ="<?php echo $cid;?>"
+    $(document).ready(function() {
+        $("#insdet").click(function() {
+            $(".details-container").load("../../controller/onLoadProfilePrint.php",{
+                uid:insid
+            });
+        });
+        $("#csdet").click(function() {
+            $(".details-container").load("../../controller/onLoadCourseDes.php",{
+                csid:cid
+            });
+        });
+
+    });
+</script>
 
 </html>

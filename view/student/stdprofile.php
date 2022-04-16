@@ -1,6 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION)) {
+if (empty($_SESSION)) {
+    header('location: ../login.php');
+}
 
 ?>
     <!DOCTYPE html>
@@ -103,7 +105,3 @@ if (isset($_SESSION)) {
     </body>
 
     </html>
-<?php
-} else {
-    header('location: ../login.php');
-}

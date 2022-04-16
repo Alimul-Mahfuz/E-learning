@@ -57,6 +57,7 @@ if (empty($errFlag) && $isPost == true) {
                 $_SESSION['urole'] = $row['u_role'];
                 $_SESSION['uaddress'] = $row['address'];
                 $_SESSION['profileimgpath'] = $row['profileImage'];
+                
             }
             if ($_SESSION['urole'] == 2) {
                 //This will redirected the user to student's dashboard

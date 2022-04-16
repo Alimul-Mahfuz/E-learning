@@ -1,9 +1,7 @@
 <?php
+$ins_id=$_POST['uid'];
+include '../model/db-connect.php';
 
-function printInstructorDetails($ins_id)
-{
-
-    include '../../model/db-connect.php';
 
     $qry = "select name, email, profileImage from users where user_id='" . $ins_id . "'";
     if ($conn->connect_errno) {
@@ -38,7 +36,20 @@ function printInstructorDetails($ins_id)
     $insDetails['name'] = $insName;
     $insDetails['email'] = $insEmail;
     $insDetails['profileImage'] = $profileImage;
-
-
-    return $insDetails;
-}
+    ?>
+    <div class="insdet">
+    <div class="insqual">
+        <h3 style="font-size: 16pt;"><?php echo $insDetails['name']; ?></h3>
+        <p><?php echo $insDetails['email']; ?></p>
+        <p><?php echo $insDetails['degree'] . '<br>' . $insDetails['instname']; ?></p>
+    </div>
+    <div class="inspic">
+        <?php
+        if (!empty($insDetails['profileImage'])) {
+        ?>
+            <img style="height: 300px; width:300px;" src="<?php echo $insDetails['profileImage']; ?>" alt=""><?php
+         } else {
+         echo "Profile picture not availabel";
+       }
+ ?>
+    </div>

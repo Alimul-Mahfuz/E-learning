@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (empty($_SESSION)) {
+    header('location: ../login.php');
+}
 include '../../controller/pupload.php';
 ?>
 <!-- The following code provide interface for uploading profile image that is uploaded via pupload.php 
