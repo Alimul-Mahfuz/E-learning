@@ -60,6 +60,12 @@ if (empty($errFlag) && $isPost == true) {
                 
             }
             if ($_SESSION['urole'] == 2) {
+                if(isset($_POST['rememberme'])){
+                    setcookie('email',$umail,time()+600);
+                    setcookie('pass',$upass,time()+600);
+                    header("location:../view/student/student-dashboard.php");
+                }
+
                 //This will redirected the user to student's dashboard
                 header("location:../view/student/student-dashboard.php");
             }

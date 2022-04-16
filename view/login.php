@@ -31,6 +31,13 @@ include '../controller/login-control.php';
         font-size: 0.8rem;
         padding: 0.5rem 0.3rem;
     }
+    #remember{
+        height: 15px;
+        width: 15px;
+        font-size: 18pt;
+        
+    }
+
 </style>
 
 <body>
@@ -40,10 +47,14 @@ include '../controller/login-control.php';
             <h3>Login To E-learning</h3>
             <div class="form-container">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="return loginValidate();">
-                    <input type="email" value="<?php echo $email; ?>" name="email" placeholder="Enter your mail" id="email">
+                    <input type="email" value="<?php if(isset($_COOKIE['email'])){
+                        echo $_COOKIE['email'];
+                        }?>" name="email" placeholder="Enter your mail" id="email">
                     <span><small id="emailErr" class="logerr"><i class="fa-solid fa-circle-exclamation"></i> Enter a valid email</small></span>
 
-                    <input type="password" name="password" placeholder="Password" id="password">
+                    <input type="password" value="<?php if(isset($_COOKIE['pass'])){
+                        echo $_COOKIE['pass'];
+                        }?>" name="password" placeholder="Password" id="password">
 
                     <span><small id="passErr" class="logerr"><i class="fa-solid fa-circle-exclamation"></i> Enter a valid password</small></span>
                     <br>
@@ -53,8 +64,9 @@ include '../controller/login-control.php';
                     <span><small id="logPassErr" class="logerr"><i class="fa-solid fa-circle-exclamation"></i><?php echo $loginErr; ?></small></span>
                     <!-- <span class="errorstyle"><?php echo $loginErr; ?></span>
                     <span class="errorstyle"><?php echo $accountypeErr; ?></span> -->
-                    <p><a href="#">Forget password?</a></p>
-                    <p>Don't join yet? <a href="singup.php">Sing up</a></p>
+                    <span><input type="checkbox" name="rememberme" id="remember"> Remember Me</span>
+                    <p><a style="color:red;" href="#">Forget password?</a></p>
+                    <p>Don't join yet? <a style="color:blue;" href="singup.php">Sing up</a></p>
                 </form>
             </div>
         </div>
