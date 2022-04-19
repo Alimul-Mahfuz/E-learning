@@ -18,6 +18,8 @@ function validate() {
     var password = document.getElementById('password');
     var rePass = document.getElementById('rePass');
     var urole = document.getElementById('urole');
+    var dupemail = "<?php echo  $emailErr; ?>";
+
     if (fname.value === '') {
         let fid = document.getElementById('fnameErr');
         showError(fid);

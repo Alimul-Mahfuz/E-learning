@@ -161,6 +161,14 @@ require '../controller/reg-control.php';
     <?php include 'footer.php'; ?>
     <!-- link of external javascript validation file -->
     <script src="./scripts/regvalid.js"></script>
+    <script>
+    var dupmail = <?php echo $emailErr;?>
+    if(dupemail!=''){
+        alert("Duplicate Email Entry");
+    }
+    
+    </script>
+
 
 
 </body>

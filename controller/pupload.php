@@ -1,6 +1,6 @@
 <?php
 //This will upload user profile picture
-session_start();
+// session_start();
 include '../../model/db-connect.php';
 if (empty($_SESSION['uid'])) {
     $q = "select user_id from users where email='" . $_SESSION['umail'] . "'";
@@ -14,10 +14,12 @@ if (empty($_SESSION['uid'])) {
         }
     }
 }
-
+$imgupErr="";
+$typeErr =  "";
+$sizeErr="";
 
 $id = $_SESSION['uid'];
-if (isset($_POST["btn-pup"])) {
+if (isset($_POST["btn-pup"])&&!empty($_FILES['pimg']['name'])) {
     $typsafe = false;
     $allowedfileType = array('jpg', 'jpeg', 'png');
     $currentFileType = $_FILES['pimg']['type'];
@@ -56,4 +58,7 @@ if (isset($_POST["btn-pup"])) {
     } else {
         echo 'Please upload jpg,jpeg or png file';
     }
+}
+else{
+    $imgupErr="Please select and image first";
 }

@@ -28,6 +28,10 @@ if (empty($_SESSION)) {
                 border: none;
                 border-radius: 10px;
             }
+            a{
+                padding: 5px;
+                text-decoration: none;
+            }
         </style>
     </head>
 
@@ -93,11 +97,12 @@ if (empty($_SESSION)) {
                 <?php if (empty($_SESSION['profileimgpath'])) {
                     echo "You don't have a profile picture yet, want to upload?";
                     echo '<br>';
-                ?><a href="./profileimageupload.php">Upload Picture</a><?php
+                ?><a href="./profilepicupload.php">Upload Picture</a><?php
                                                                     } else { ?>
                     <img style="height: 277px; width:auto;" src="<?php echo $_SESSION['profileimgpath']; ?>" alt="no image">
                     <br>
-                    <a href="./profileimageupload.php">Change picture</a>
+                    <a href="./profilepicupload.php">Change picture</a>
+                    <a href="../../controller/delprofileimg.php">Delete Picture</a>
                 <?php } ?>
             </div>
         </div>
