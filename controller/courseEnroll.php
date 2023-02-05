@@ -15,7 +15,7 @@ if ($conn->connect_errno) {
             $id = $row['user_id'];
         }
     }
-    $check= "Select pay_id from payment where user_id='".$id."' and c_id='".$_GET['cid']."'";
+    $check= "select pay_id from payment where user_id='".$id."' and c_id='".$_GET['cid']."'";
     $chkres = $conn->query($check);
     if($chkres->num_rows>0){
 
