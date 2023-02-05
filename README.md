@@ -1,6 +1,6 @@
-# Basic E-learning website with raw PHP, JAVASCRIPT, HTML, CSS and AJAX.
+### Basic E-learning website with raw PHP, JAVASCRIPT, HTML, CSS and AJAX.
 
-where a student can create a profile and took his favourite courses form professional teachers.
+####where a student can create a profile and took his favourite courses form professional teachers.
 
 
 ##### This is homepage of website
